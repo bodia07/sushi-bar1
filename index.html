@@ -4,22 +4,71 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Sushi Bar</title>
-    <link rel="stylesheet" href="">
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap" rel="stylesheet">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+rel="stylesheet"
+integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH"
+crossorigin="anonymous">
+
+    <link rel="stylesheet" href="css/style.css">
     
 </head>
 <body>
     <header>
-        <div>
-            <img style="height: 50px;" src="img/sushi-24.png" alt="Логотип"> 
-                <a>меню</a>
-                <a>про нас</a>
-                <a>контакти</a>
+        <nav class="navbar navbar-expand-lg ">
+            <div class="container">
+                
+              <a class="navbar-brand" href="#"> <img style="height: 50px;" src="img/sushi-24.png" alt="Логотип">  Sushi bar</a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                  <li class="nav-item">
+                    <a class="nav-link active" aria-current="page" href="#">меню</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">про нас</a>
+                  </li>
+                  <li class="nav-item">
+                    <a class="nav-link" href="#">контакти</a>
+                  </li>
+                </ul>
                 <img class="cart" src="img/shopping-cart-icon-shopping-basket-on-transparent-background-free-png.webp" alt="Кошик">
-        </div>
+              </div>
+            </div>
+          </nav>
+
+
+        
+           
+               
+                
+        
     </header>
     <main>
-        <div class="photo-menu">
+        <div class="photo-menu container">
+            <div class="card mb-3" style="max-width: 540px;">
+                <div class="row g-0">
+                  <div class="col-md-4">
+                    <img src="img/9046531.jpg" class="img-fluid  h-100" alt="Avocado roll">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body">
+                      <h5 class="card-title">Avocado Roll</h5>
+                      <p class="card-text">This is a wider card with supporting text below as a natural lead-in to additional content. This content is a little bit longer.</p>
+                      <a class="fancy" href="#">
+                        <span class="top-key"></span>
+                        <span class="text">order</span>
+                        <span class="bottom-key-1"></span>
+                        <span class="bottom-key-2"></span>
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
             <div class="photo"><img src="img/9046531.jpg" alt="Avocado roll"></div>
             <div class="photo"><img src="img/9046595.jpg" alt="Special-roll"></div>
             <div class="photo"><img src="img/57463480.jpg" alt="Ebiten"></div>
@@ -31,6 +80,10 @@
             <div class="photo"><img src="img/9046538.jpg" alt="Unagi roll"></div>
         </div>
     </main>
+    <script
+src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+crossorigin="anonymous"></script>
     <script src="js/script.js"></script>
 </body>
 </html>
