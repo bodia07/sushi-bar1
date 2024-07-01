@@ -15,9 +15,15 @@ header img{
     height: 40px;
 }
 
+
 .photo-menu { 
 
 }
+photo-menu img{
+    width: 300px;
+    height: 300px;
+}
+
 .card{
     border-radius: 0;
 }
@@ -29,6 +35,33 @@ main{
     padding: 20px;
 }
 
+section{
+    background-color: rgb(211, 97, 53);
+    width: 100%;
+    padding: 10px;
+}
+section h1{
+  color: rgb(255, 255, 255);
+  
+}
+section .text{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    font-size: 36px;
+    color: #ffffff;
+}
+.Kontakty img{
+    width: 100px;
+    height: 100px;
+}
+.social{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 50px;
+    
+}
 
 .fancy {
     background-color: transparent;
