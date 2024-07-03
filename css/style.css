@@ -51,6 +51,9 @@ section .text{
     font-size: 36px;
     color: #ffffff;
 }
+.Kontakty{
+    height: 220px;
+}
 .Kontakty img{
     width: 100px;
     height: 100px;
@@ -62,6 +65,14 @@ section .text{
     gap: 50px;
     
 }
+
+footer{
+    background-color: rgb(127, 176, 105);
+    text-align: center;
+    height: 30px;
+}
+
+
 
 .fancy {
     background-color: transparent;
