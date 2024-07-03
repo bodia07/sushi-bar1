@@ -1,0 +1,56 @@
+[
+    {
+        "title":"Avocado roll",
+        "price":309,
+        "image":"9046531.jpg",
+        "description":"Slices of avocado, shrimp in batter, cucumber, avocado, japanese mayonnaise, sesame.(8pcs)"
+    },
+    {
+        "title":"Special-roll",
+        "price":110,
+        "image":"9046595.jpg",
+        "description":"Fried shrimp, cucumber, flying fish roe, burn cheese, japanese dressing.(4pcs)"
+    },
+    {
+        "title":"Ebiten",
+        "price":299,
+        "image":"57463480.jpg",
+        "description":"Sma\u017een\u00e9 krevety v t\u011bst\u00ed\u010dku"
+    },
+    {
+        "title":"Roll mix",
+        "price":209,
+        "image":"57463482.jpg",
+        "description":"4pcs futo maki, 2pcs california roll, 2pcs caviar roll."
+    },
+    {
+        "title":"California",
+        "price":199,
+        "image":"57463481.jpg",
+        "description":"losos, krab, avok\u00e1do ,okurka, japonsk\u00e1 majon\u00e9za. (8pcs)"
+    },
+    {
+        "title":"Mugaro roll",
+        "price":359,
+        "image":"9046589.jpg",
+        "description":"Slices of tuna, crab sticks, avocado, tuna, japanese mayonnaise.(8pcs)"
+    },
+    {
+        "title":"Avocado nigiri",
+        "price":99,
+        "image":"9042192.jpg",
+        "description":"Avocado 2pcs"
+    },
+    {
+        "title":"Special maguro shashimi",
+        "price":259,
+        "image":"9043495.jpg",
+        "description":"Tuna 3pcs"
+    },
+    {
+        "title":"Unagi roll",
+        "price":349,
+        "image":"9046538.jpg",
+        "description":"Bbq eel, teriyaki sauce, sasame, tuna, cucumber, avocado. (8pcs)"
+    }
+]
