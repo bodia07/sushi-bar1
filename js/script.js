@@ -1,11 +1,11 @@
-const url= "https://script.google.com/macros/s/AKfycbypatMCny4p_oHEtPc4iYT2Higca1RNke_DYzZsOcC7LF869gG-VG2fODFD4fSWFYk6zA/exec"
-const sheet="Sushi data shop"
+const url = "https://script.google.com/macros/s/AKfycbypatMCny4p_oHEtPc4iYT2Higca1RNke_DYzZsOcC7LF869gG-VG2fODFD4fSWFYk6zA/exec"
+const sheet = "Sushi data shop"
 
 async function getProducts() {
     // Виконуємо запит до файлу "store_db.json" та очікуємо на відповідь
     const response = await fetch("sushi_db.json")
-    
-    const  products  = await response.json();
+
+    const products = await response.json();
     // Повертаємо отримані продукти
     return products
 }
@@ -20,9 +20,10 @@ function getCardHTML(item) {
                     <div class="card-body  d-flex flex-column justify-content-between">
                       <h5 class="card-title">${item.title}</h5>
                       <p class="card-text">${item.description}</p>
-                      <h6>${item.price} грн₴</h6>
-                            <button class="fancy order-btn">
+                      <h6>${item.price} ₴</h6>
+                            <button class="fancy order-btn" data-product='${JSON.stringify(item)}'>
                                 <span class="top-key"></span>
+
                                 <span class="text">замовити</span>
                                 <span class="bottom-key-1"></span>
                                 <span class="bottom-key-2"></span>
@@ -51,23 +52,10 @@ function getCookieValue(cookieName) {
     return ''
 }
 
-loadCartFromCookies()
-    let cartCookie = getCookieValue('cart');
-    if (cartCookie && cartCookie !== '') {
-        this.items = JSON.parse(cartCookie);
-        
-    }
 
 
-let cart = new ShopingCart()
 
-function addToCart(event) {
-    let productData = event.target.getAttribute("data-product")
-    let product = JSON.parse(productData)
-    cart.addItem(product)
-    console.log(cart)
 
-}
 
 
 class ShopingCart {
@@ -92,17 +80,32 @@ class ShopingCart {
         document.cookie = `cart=${cartJSON}; max-age=${60 * 60 * 24 * 7}; path=/`;
     }
 
+    loadCartFromCookies() {
+        let cartCookie = getCookieValue('cart');
+        if (cartCookie && cartCookie !== '') {
+            this.items = JSON.parse(cartCookie);
+
+        }
+    }
 }
 
+let cart = new ShopingCart()
 
+function addToCart(event) {
+    let productData = event.target.getAttribute("data-product")
+    let product = JSON.parse(productData)
+    cart.addItem(product)
+    console.log(cart)
 
+}
 
 // Викликаємо асинхронну функцію та очікуємо на отримання продуктів
 getProducts().then(function (products) {
 
     let productsList = document.querySelector('.menu-list')
-    productsList.innerHTML = ""
+    
     if (productsList) {
+        productsList.innerHTML = ""
         products.forEach(function (product) {
             // Відображаємо товари на сторінці
             productsList.innerHTML += getCardHTML(product)
@@ -119,10 +122,39 @@ getProducts().then(function (products) {
 })
 
 
-let cart_list=document.querySelector('.cart')
-if (cart_list){
-    cart_list.innerHTML=''
-    for (let title in cart.items){
-        cart_list.innerHTML+= getCardHTML(cart.items[title])
+function getCartItem(item) {
+    return `<div class="col">
+            <div class="card mb-3 py-2" style="">
+                <div class="row g-0">
+                  <div class="col-md-6 d-flex align-items-center px-2">
+                    <img src="img/${item.image}" class="img-fluid"  alt="${item.title}">
+                  </div>
+                  <div class="col-md-6">
+                    <div class="card-body  d-flex flex-column justify-content-between">
+                      <h5 class="card-title">${item.title}</h5>
+                      <p class=""card-text>kilkisti: ${item.quantity}</p>
+                      <h6>${item.price*item.quantity} ₴</h6>
+                    </div>
+                  </div>
+                </div>
+              </div>
+              </div>`
+}
+
+
+
+let cart_list = document.querySelector('.cart-list')
+if (cart_list) {
+    cart_list.innerHTML = ''
+    for (let title in cart.items) {
+        cart_list.innerHTML += getCartItem(cart.items[title])
     }
+}
+
+
+let order_btn=document.querySelector(".send_order")
+if(order_btn){
+    order_btn.addEventListener(".click",function(){
+        
+    })
 }
